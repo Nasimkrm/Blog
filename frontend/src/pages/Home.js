@@ -18,11 +18,20 @@ const Home = () => {
   }, []);
   return (
     <div className="home">
+      <div className="intro">
+        <p>
+          Hi and welcome to my blog! Here is a space I'd like to share anything
+          related to Iran, from photos I've taken to some Persian recipes I've
+          tried over the years.
+        </p>
+      </div>
+      <h2>Yazd</h2>
       <div className="iran-photos">
         <img className="image" src="./images/yazd.jpg" alt="yazd" />
         <img className="image" src="./images/yazd1.jpg" alt="yazd" />
         <img className="image" src="./images/yazd2.jpg" alt="yazd" />
       </div>
+
       <h1>Some Persian Recipes</h1>
       <div className="blogs">
         {blogs &&

@@ -11,36 +11,42 @@ const getBlogs = async (req, res) => {
   }
 };
 
-// "Minced beef or lamb: 1Kg, onion: 1 medium sized, garlic: 1 clove, Carrots: 1, Potatoes: 1, Tomato puree: 2 tablespoons, Lemon juice: 1 tablespoon":
-("");
+const insertPost = () => {
+  Blog.insertMany([
+    {
+      title: "Kabab Tabe'ei",
 
-// const insertPost = () => {
-//   Blog.insertMany([
-//     {
-//       title: "Kabab Tabe'ei",
-//       body: {
-//         ingredients: [
-//           "Minced beef or lamb: 1Kg",
-//           "Onion: 1 medium sized",
-//           "Garlic: 1 clove",
-//           "Carrots: 1",
-//           "Potatoes: 1",
-//           "Tomato puree: 2 tablespoons",
-//           "Lemon juice: 1 tablespoon",
-//           "Salt: 1 tablespoon",
-//           "Pepper: 1 tablespoon",
-//           "Turmeric: 1 tablespoon",
-//           "Cumin: 1 tablespoon",
-//           "Cinammon: 1 tablespoon",
-//           "Vegetable oil: 1 tablespoon",
-//         ],
+      body: {
+        prepTime: "30 minutes",
+        serves: "4 people",
+        ingredients: [
+          "Minced beef or lamb: 1Kg",
+          "Onion: 1 medium sized",
+          "Garlic: 1 clove",
+          "Carrots: 1 thinly sliced",
+          "Potatoes: 1 thinly sliced",
+          "Tomato puree: 2 tablespoons",
+          "Lemon juice: 1 tablespoon",
+          "Salt: 1 tablespoon",
+          "Pepper: 1 tablespoon",
+          "Turmeric: 1 tablespoon",
+          "Cumin: 1 tablespoon",
+          "Cinammon: 1 tablespoon",
+          "Vegetable oil: 1 tablespoon",
+        ],
 
-//         steps:
-//           "Grate the onion and garlic then mix in with the meat. Add salt, pepper, turmeric, cumin and a pinch of cinammon alongside any desired amount of vegetable oil. After mixing the ingredients, mould them in disks and flatten them on the palm of your hands. Then place them in a large enough frying pan. Fry both sides of each disk until a caramel colour. Add the tomato puree and fry a little until the colour the changes a bit. Then add about 100ml of water, you can add the carrots and potatoes here. If you add potatoes then you will probably need a little bit more water. Bring the mixture to a boil and then simmer until sauce is thickened. Through the end, add the lemon juice and serve with rice. ",
-//       },
-//     },
-//   ]);
-// };
+        steps: [
+          "1. In a large bowl, grate the onion and add the meat and spices. Mix well.",
+          "2. Mould the meat in small disks and flatten them on the palm of your hand.",
+          "3. Heat the oil in a pan and fry the meat disks on both sides until brown.",
+          "4. Add the tomato puree and fry for a minute",
+          "5. Add about 100ml of water and the carrots and/or potatoes. Bring to boil and simmer for 30 minutes until the sauce has thickened.",
+          "6. Through the end add the lemon juice and serve with rice.",
+        ],
+      },
+    },
+  ]);
+};
 
 // insertPost();
 

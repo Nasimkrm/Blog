@@ -65,9 +65,14 @@ header a {
 .iran-photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(2, 1fr); */
   grid-gap: 15px;
   object-fit: cover;
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .image {
@@ -84,12 +89,32 @@ header a {
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .blog-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
+}
+
+.serves {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-around;
+}
+
+.prep {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-around;
 }
 
 .blog-details p {
@@ -107,4 +132,14 @@ header a {
   padding: 6px;
   border-radius: 50%;
   color: #333;
+}
+
+.blog-details p {
+  line-height: 1.9em;
+}
+
+.ingredients img {
+  width: 20px;
+  height: 20px;
+  margin-right: 4px;
 }
