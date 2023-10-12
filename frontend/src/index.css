@@ -46,6 +46,18 @@ header a {
   flex-direction: column;
 }
 
+.home h2,
+h3 {
+  text-align: center;
+}
+
+/* .home h3 {
+  border-radius: 1px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+} */
+
 .image-container {
   /* width: 50%;
   height: 50%; */
