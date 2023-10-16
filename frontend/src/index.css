@@ -1,157 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
-
-:root {
-  --primary: #1aac83;
-  --error: #e7195a;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   background: #f1f1f1;
   font-family: "Poppins", sans-serif;
   margin: 0;
-}
-
-header {
-  background: #fff;
-}
-
-header .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-header a {
   color: #333;
-  text-decoration: none;
 }
 
-.pages {
-  max-width: 1400px;
-  padding: 20px;
-  margin: 0 auto;
+h1 {
+  @apply text-4xl font-bold;
 }
 
-/* homepage */
-
-.home {
-  /* display: grid;
-  grid-template-columns: 3fr;
-  gap: 100px; */
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+h2 {
+  @apply text-2xl font-bold;
 }
 
-.home h2,
 h3 {
-  text-align: center;
-}
-
-/* .home h3 {
-  border-radius: 1px;
-  padding: 20px;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-} */
-
-.image-container {
-  /* width: 50%;
-  height: 50%; */
-  overflow: hidden;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.tea-image {
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-}
-
-.iran-photos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 15px;
-  object-fit: cover;
-  background: #fff;
-  border-radius: 4px;
-  margin: 20px auto;
-  padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.image {
-  width: 90%;
-  height: 90%;
-  border: 1px solic #ccc;
-  border-radius: 4px;
-  object-fit: cover;
-}
-.blog-details {
-  background: #fff;
-  border-radius: 4px;
-  margin: 20px auto;
-  padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
-
-.blog-details h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
-  color: var(--primary);
-}
-
-.serves {
-  width: fit-content;
-
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  justify-content: space-around;
-}
-
-.prep {
-  width: fit-content;
-
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  justify-content: space-around;
-}
-
-.blog-details p {
-  margin: 0;
-  font: size 0.9em;
-  color: #555;
-}
-
-.blog-details span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  background: #f1f1f1;
-  padding: 6px;
-  border-radius: 50%;
-  color: #333;
-}
-
-.blog-details p {
-  line-height: 1.9em;
-}
-
-.ingredients img {
-  width: 20px;
-  height: 20px;
-  margin-right: 4px;
+  @apply text-xl font-bold;
 }

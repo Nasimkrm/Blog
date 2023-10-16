@@ -1,48 +1,65 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import BlogDetails from "../components/BlogDetails";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const response = await fetch("http://localhost:4000/blog");
-      const json = await response.json();
-
-      if (response.ok) {
-        console.log(json);
-        setBlogs(json);
-      }
-    };
-
-    fetchBlogs();
-  }, []);
   return (
-    <div className="home">
-      <div className="intro">
+    <div className="flex flex-wrap flex-col">
+      <div>
         <p>
-          Hi, welcome to Notes On Iran! Here is a space I'd like to share
+          Hi, welcome to Notes On Iran. Here is a space I'd like to share
           anything related to Iran, from photos I've taken to some Persian
-          recipes I've tried over the years.
+          recipes I've tried.
         </p>
       </div>
-      <h2>Some Photos of Iran</h2>
-      <h3>Yazd</h3>
-      <div className="iran-photos">
-        <img className="image" src="./images/yazd.jpg" alt="yazd" />
-        <img className="image" src="./images/yazd1.jpg" alt="yazd" />
-        <img className="image" src="./images/yazd2.jpg" alt="yazd" />
-        <img className="image" src="./images/yazd3.jpg" alt="yazd" />
-        <img className="image" src="./images/yazd4.jpg" alt="yazd" />
-        <img className="image" src="./images/yazd5.jpg" alt="yazd" />
-
-        {/* <Link to="/">See More</Link> */}
+      <div className="mt-4">
+        <h2 className="text-center">Photos</h2>
       </div>
 
-      <h2>Some Persian Recipes</h2>
-      <div className="blogs">
-        {blogs &&
-          blogs.map((blog) => <BlogDetails key={blog._id} blog={blog} />)}
+      <div className="grid grid-cols-3 gap-15 object-cover bg-neutral-50 rounded-sm my-8  p-12 relative shadow-md">
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current object-cover"
+          src="./images/yazd.jpg"
+          alt="yazd"
+        />
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current object-cover"
+          src="./images/yazd1.jpg"
+          alt="yazd"
+        />
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current object-cover"
+          src="./images/yazd2.jpg"
+          alt="yazd"
+        />
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current object-cover"
+          src="./images/yazd3.jpg"
+          alt="yazd"
+        />
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current"
+          src="./images/yazd4.jpg"
+          alt="yazd"
+        />
+        <img
+          className="w-11/12 h-4/5 border-1 border-solid border-current"
+          src="./images/yazd5.jpg"
+          alt="yazd"
+        />
+      </div>
+
+      <h2 className="text-center">Recipes</h2>
+      <div className="flex flex-wrap flex-col mt-8">
+        <div className="w-auto  flex bg-neutral-50 rounded-sm mr-auto shadow-md mb-20">
+          <div className="float-left">
+            <img src="./images/yazd1.jpg" alt="yazd" className="w-24 h-24" />
+          </div>
+
+          <div className="flex flex-col items-center justify-center px-16 ">
+            <Link to="/kabab-tabei" className="font-semibold">
+              Kabab Tabei
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
