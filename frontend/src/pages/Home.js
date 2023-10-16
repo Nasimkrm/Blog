@@ -55,7 +55,10 @@ const Home = () => {
           </div>
 
           <div className="flex flex-col items-center justify-center px-16 ">
-            <Link to="/kabab-tabei" className="font-semibold">
+            <Link
+              to="/kabab-tabei"
+              className="font-semibold text-primary-color"
+            >
               Kabab Tabei
             </Link>
           </div>
