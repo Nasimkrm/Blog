@@ -45,10 +45,42 @@ const insertPost = () => {
         ],
       },
     },
+
+    {
+      title: "Persian Saffron Chicken",
+
+      body: {
+        prepTime: "30 minutes",
+        serves: "4-6 people",
+        ingredients: [
+          "olive oil: 4 tbsp",
+          "onion: 2 large or 3 small sized, roughly diced",
+          "chicken thighs: 8",
+          "saffron: 1 generous pinch",
+          "cumin: 2 heaped tsp",
+          "cinnamon: 1/2 tsp ground",
+          "orange juice: juice of 2 oranges",
+          "sea salt flakes and freshly ground black pepper",
+          "fennel bulbs: 2 large fennel bulbs, topped and tailed and cut into quarters",
+          "honey: 3 tbsp clear honey",
+          "barberries: 2 large handul of dried barberries",
+        ],
+
+        steps: [
+          "1. Set a large saucepan over a medium heat if using gas, or a medium-high heat if cooking on electric, and the olive oil to the pan. Fry the onions until they are soft and translucent and just begin to take on a golden-brow colour around the edges.",
+          "2. Add the chicken thighs and coat them in the onion mixture to seal the flavour into the meat. Cook until you get just a little colour onto the thighs. ",
+          "3. Grind the saffron and add it to the chicken, stirring well to ensure the chicken thighs are evenly coated in onion and saffron.",
+          "4. Add the cumin, cinnamon, orange juice and a generous amount of sea salt flakes and black pepper and give everything a final stir.",
+          "5. Pour over just enough boiling water to cover the chicken, then add the fennel quarters and honey. Cover the pan with a lid, reduce the temperature to low and simmer for 1 hour, stirring after 30 minutes to prevent sticking.",
+          "6. After the hour has passed, add the barberries and stir gently, then cover and cook for another hour. The slower and longer you cook this dish, the richer and better it will taste.",
+          "7. After the full 2 hours of cooking, check the chickenand fennel to ensure they are still intact and give it a final stir. Re-cover and cook for a further 20 minutes, serve with basmati rice.",
+        ],
+      },
+    },
   ]);
 };
 
-// insertPost();
+//insertPost();
 
 //Get a single blog
 const getBlog = async (req, res) => {

@@ -1,6 +1,21 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const [blogs, setBlogs] = useState(null);
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const response = await fetch("http://localhost:4000/blog");
+      const json = await response.json();
+
+      if (response.ok) {
+        console.log(json);
+        setBlogs(json);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
   return (
     <div className="flex flex-wrap flex-col">
       <div>
@@ -48,22 +63,29 @@ const Home = () => {
       </div>
 
       <h2 className="text-center">Recipes</h2>
-      <div className="flex flex-wrap flex-col mt-8">
-        <div className="w-auto  flex bg-neutral-50 rounded-sm mr-auto shadow-md mb-20">
-          <div className="float-left">
-            <img src="./images/yazd1.jpg" alt="yazd" className="w-24 h-24" />
-          </div>
+      {blogs &&
+        blogs.map((blog) => (
+          <div className="flex flex-wrap flex-col mt-8" key={blog._id}>
+            <div className="flex flex-col gap-10">
+              <div className="w-auto flex items-center justify-center pr-16 bg-neutral-50 rounded-sm mr-auto shadow-md">
+                <div className="float-left">
+                  <img
+                    src="./images/persianTea.jpg"
+                    alt="yazd"
+                    className="w-24 h-24 object-cover"
+                  />
+                </div>
 
-          <div className="flex flex-col items-center justify-center px-16 ">
-            <Link
-              to="/kabab-tabei"
-              className="font-semibold text-primary-color"
-            >
-              Kabab Tabei
-            </Link>
+                <Link
+                  to={`/blog/${blog._id}`}
+                  className="font-semibold text-primary-color ml-2"
+                >
+                  {blog.title}
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ))}
     </div>
   );
 };
