@@ -51,7 +51,7 @@ const RecipeDetails = () => {
               <div className="">
                 {recipe.body.ingredients.map((ingredient) => {
                   return (
-                    <ul>
+                    <ul key={ingredient.id}>
                       <li className="leading-7">{ingredient}</li>
                     </ul>
                   );
@@ -62,11 +62,14 @@ const RecipeDetails = () => {
 
           <div className="mt-8 flex flex-col space-y-6">
             <h5>Method</h5>
-            <p>
-              {recipe.body.steps.map((step) => {
-                return <p className="leading-7">{step}</p>;
-              })}
-            </p>
+
+            {recipe.body.steps.map((step) => {
+              return (
+                <p key={step.id} className="leading-7">
+                  {step}
+                </p>
+              );
+            })}
           </div>
         </div>
       </>

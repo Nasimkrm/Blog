@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import RecipeCard from "../components/RecipeCard";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState(null);
+  const [recipes, setRecipes] = useState(null);
   useEffect(() => {
-    const fetchBlogs = async () => {
+    const fetchRecipes = async () => {
       const response = await fetch("http://localhost:4000/blog");
       const json = await response.json();
 
       if (response.ok) {
         console.log(json);
-        setBlogs(json);
+        setRecipes(json);
       }
     };
 
-    fetchBlogs();
+    fetchRecipes();
   }, []);
   return (
     <div className="flex flex-wrap flex-col">
@@ -63,29 +64,14 @@ const Home = () => {
       </div>
 
       <h2 className="text-center">Recipes</h2>
-      {blogs &&
-        blogs.map((blog) => (
-          <div className="flex flex-wrap flex-col mt-8" key={blog._id}>
-            <div className="flex flex-col gap-10">
-              <div className="w-auto flex items-center justify-center pr-16 bg-neutral-50 rounded-sm mr-auto shadow-md">
-                <div className="float-left">
-                  <img
-                    src="./images/persianTea.jpg"
-                    alt="yazd"
-                    className="w-24 h-24 object-cover"
-                  />
-                </div>
-
-                <Link
-                  to={`/blog/${blog._id}`}
-                  className="font-semibold text-primary-color ml-2"
-                >
-                  {blog.title}
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="flex flex-wrap flex-col mt-8">
+        <div className="flex flex-col gap-10">
+          {recipes &&
+            recipes.map((recipe) => (
+              <RecipeCard recipe={recipe} key={recipe._id} />
+            ))}
+        </div>
+      </div>
     </div>
   );
 };
