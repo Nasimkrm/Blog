@@ -30,7 +30,7 @@ const Home = () => {
         <h2 className="text-center">Photos</h2>
       </div>
 
-      <div className="grid grid-cols-3 gap-15 object-cover bg-neutral-50 rounded-sm my-8  p-12 relative shadow-md">
+      <div className="grid grid-cols-3 gap-15 object-cover bg-neutral-50 rounded-sm my-8  p-4 shadow-md">
         <img
           className="w-11/12 h-4/5 border-1 border-solid border-current object-cover"
           src="./images/yazd.jpg"
@@ -64,13 +64,11 @@ const Home = () => {
       </div>
 
       <h2 className="text-center">Recipes</h2>
-      <div className="flex flex-wrap flex-col mt-8">
-        <div className="flex flex-col gap-10">
-          {recipes &&
-            recipes.map((recipe) => (
-              <RecipeCard recipe={recipe} key={recipe._id} />
-            ))}
-        </div>
+      <div className="flex flex-wrap flex-col mt-8 gap-10">
+        {recipes &&
+          recipes.map((recipe) => (
+            <RecipeCard recipe={recipe} key={recipe._id} />
+          ))}
       </div>
     </div>
   );
